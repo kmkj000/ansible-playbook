@@ -1,0 +1,24 @@
+- name: update timezone
+  copy:
+    dest: /etc/timezone
+    content: |
+      Asia/Tokyo
+  register: timezone # インデントはname/copyと同列
+
+- name: reconfigure tzdata
+  when: timezone|changed
+    shell: |
+      dpkg-reconfigure -f noninteractive tzdata
+
+
+- name: update locale script
+  copy:
+    dest: /etc/profile.d/locale.sh #←パスに注意! 間違うとあとで残念なことになる
+        content: |
+          export LC_ALL=ja_JP.UTF-8 #←"t L"の間は空白あり、 "="の前後に空白なし
+  register: locale
+
+- name: generate locale
+  when: locale|changed
+    shell: |
+      locale-gen ja_JP.UTF-8
