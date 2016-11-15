@@ -7,8 +7,7 @@
 
 - name: reconfigure tzdata
   when: timezone|changed
-  shell: |
-    dpkg-reconfigure -f noninteractive tzdata
+  shell: dpkg-reconfigure -f noninteractive tzdata
 
 
 - name: update locale script
@@ -21,5 +20,4 @@
 
 - name: generate locale
   when: locale|changed
-  shell: |
-    locale-gen ja_JP.UTF-8
+  shell: locale-gen ja_JP.UTF-8
