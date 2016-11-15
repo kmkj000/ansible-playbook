@@ -20,5 +20,4 @@
 
 - name: generate locale
   when: locale|changed
-  shell: |
-    locale-gen ja_JP.UTF-8
+  shell: locale-gen ja_JP.UTF-8
