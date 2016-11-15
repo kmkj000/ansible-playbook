@@ -7,4 +7,3 @@
       with_items:
         - vim
         - tmux
-        - git
