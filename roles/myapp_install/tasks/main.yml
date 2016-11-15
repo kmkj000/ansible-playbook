@@ -1,9 +1,0 @@
----
-- hosts: all
-  user: root
-  tasks:
-    - name: install MyStandardApp
-      apt: name={{item}} state=present update_cache=yes
-      with_items:
-        - vim
-        - tmux

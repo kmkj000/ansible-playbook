@@ -1,5 +1,0 @@
-- hosts: all
-  become: true
-  roles:
-  - ubuntu_jpn
-  - myapp_install

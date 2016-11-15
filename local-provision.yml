@@ -1,0 +1,5 @@
+- hosts: localhost 
+  become: true
+  roles:
+    - ubuntu_jpn
+    - myapp_install
