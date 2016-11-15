@@ -14,10 +14,11 @@
 - name: update locale script
   copy:
     dest: /etc/profile.d/locale.sh #←パスに注意! 間違うとあとで残念なことになる
-        content: |
-          export LC_ALL=ja_JP.UTF-8
+      content: |
+        export LC_ALL=ja_JP.UTF-8
   register: locale
 
 - name: generate locale
   when: locale|changed
-  shell: locale-gen ja_JP.UTF-8
+  shell: |
+    locale-gen ja_JP.UTF-8
