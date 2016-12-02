@@ -1,0 +1,2 @@
+- name: dotfiles install
+  shell: bash -c "$(curl -fsSL dot.puti.tokyo)"
