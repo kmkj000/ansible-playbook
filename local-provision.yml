@@ -1,6 +1,8 @@
+---
 - hosts: localhost
+  connection: local
   become: true
   roles:
-    - ubuntu_tojpn
+    - ubuntu_lang-tojpn
     - ubuntu_myapp-install
     - ubuntu_dotfiles
