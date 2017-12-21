@@ -1,0 +1,9 @@
+- name: install require build Cpuminer 
+  apt: name={{item}} state=present update_cache=yes
+  with_items:
+    - git
+    - libcurl4-openssl-dev
+    - gcc-mingw-w64
+    - automake
+    - gcc
+    - make
